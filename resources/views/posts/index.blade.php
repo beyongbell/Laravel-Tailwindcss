@@ -34,6 +34,7 @@
             @empty
                 <p>There are no posts</p>
             @endforelse
+            {{ $posts->links() }}
         </div>
     </div>
 @endsection
