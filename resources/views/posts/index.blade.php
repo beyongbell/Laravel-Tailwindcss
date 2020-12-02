@@ -22,6 +22,18 @@
                     </div>
                 </form>
             @endauth
+
+            @forelse ($posts as $post)
+                <div class="mb-4">
+                    <a href="" class="font-bold">
+                        {{ $post->user->name }}
+                    </a>
+                    <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
+                    <p class="mb-2">{{ $post->body }}</p>
+                </div>
+            @empty
+                <p>There are no posts</p>
+            @endforelse
         </div>
     </div>
 @endsection
